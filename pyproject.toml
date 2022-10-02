@@ -1,0 +1,31 @@
+[project]
+name = "tputils"
+version = "0.1.0"
+description = "some cool tools for Toki Pona"
+authors = [{ name = "gregdan3", email = "gregdan3@pm.me" }]
+dependencies = []
+requires-python = ">=3.8"
+license = { text = "GPL-3.0-or-later" }
+[project.optional-dependencies]
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = ["ipython>=8.4.0", "black>=22.3.0", "isort>=5.10.1", "pytest>=7.1.2"]
+[tool.pyright]
+include = ["tputils"]
+exclude = ["**/__pycache__"]
+ignore = []
+defineConstant = { DEBUG = false }
+stubPath = ""
+
+reportMissingImports = true
+reportMissingTypeStubs = false
+
+pythonVersion = "3.10"
+pythonPlatform = "Linux"
+
+executionEnvironments = [{ root = "tputils" }]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
