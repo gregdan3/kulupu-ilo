@@ -1,1 +1,1 @@
-from tputils.staircase import power_staircase as staircase
+from tputils.staircase import repr_staircase as staircase

@@ -34,7 +34,7 @@ def staircase(
     return paths
 
 
-def power_staircase(
+def repr_staircase(
     stairs: str,
     steps: Dict[str, List[str]],
     past: Optional[List[str]] = None,
@@ -57,15 +57,14 @@ def power_staircase(
     for step in steps:
         if stairs.startswith(step):
             for substep in steps[step]:
-                power_staircase(
+                repr_staircase(
                     rm_str_prefix(stairs, step), steps, past + [substep], paths
                 )
     return paths
 
 
 def main():
-    print(json.dumps(power_staircase("ke tami", STEPS), ensure_ascii=False))
-    # print(power_staircase("wawa suli", steps))
+    print(json.dumps(repr_staircase("ke tami", STEPS), ensure_ascii=False))
 
 
 if __name__ == "__main__":
