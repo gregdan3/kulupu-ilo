@@ -1,5 +1,5 @@
 import json
-from typing import Dict, Iterable, List, Union
+from typing import List
 
 from tputils.download import get_data
 from tputils.writing import VOWELS
@@ -80,16 +80,20 @@ def main():
     urr_dict = {}
 
     data = get_data()["data"]
-    for word in data.keys():
+    for word, content in data.items():
+        if content["usage_category"] not in {"core", "widespread", "common"}:
+            continue
         reprs = get_sounds_to_reprs(word)
-        print(reprs)
-
         for sound, repr in reprs.items():
+            # if len(sound) == 1 and sound in urr_dict:  # time saver
+            #     urr_dict[sound] = repr
+            #     continue
             if sound in urr_dict:
                 urr_dict[sound].extend(repr)
             else:
                 urr_dict[sound] = repr
-    print(urr_dict)
+    urr_dict[" "] = [" "]
+    print(json.dumps(urr_dict, ensure_ascii=False))
 
 
 if __name__ == "__main__":
