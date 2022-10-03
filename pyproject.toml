@@ -3,7 +3,9 @@ name = "tputils"
 version = "0.1.0"
 description = "some cool tools for Toki Pona"
 authors = [{ name = "gregdan3", email = "gregdan3@pm.me" }]
-dependencies = []
+dependencies = [
+    "pyyaml>=6.0",
+]
 requires-python = ">=3.8"
 license = { text = "GPL-3.0-or-later" }
 [project.optional-dependencies]

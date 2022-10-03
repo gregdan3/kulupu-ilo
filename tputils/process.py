@@ -1,18 +1,10 @@
 import json
-import urllib.request
 from typing import Dict, Iterable, List, Union
 
+from tputils.download import get_data
 from tputils.writing import VOWELS
 
-JASIMA = "https://raw.githubusercontent.com/lipu-linku/jasima/master/data.json"
-
 # sound: representation
-
-
-def download(url: str) -> bytes:
-    req = urllib.request.Request(url)
-    resp = urllib.request.urlopen(req).read()
-    return resp
 
 
 def safe_index(word: str, index: int):
@@ -21,7 +13,12 @@ def safe_index(word: str, index: int):
 
 def get_sounds_to_reprs(word: str) -> dict[str, List]:
     s_t_r = dict()
-    s_t_r[word[0]] = [word]
+    s_t_r[word[0]], s_t_r[word] = [], []
+    s_t_r[word[0]].append(word)
+    s_t_r[word].append(word + ":")
+    if len(word) == 1:
+        return s_t_r
+
     moras = mora_split(word)
     current = ""
     offset = 1
@@ -34,8 +31,6 @@ def get_sounds_to_reprs(word: str) -> dict[str, List]:
             s_t_r[current] = []
 
         s_t_r[current].append(word + "·" * (i + offset))
-        if current == word:
-            s_t_r[current].append(word + ":")
     return s_t_r
 
 
@@ -82,8 +77,19 @@ def syllable_split(word: str) -> List[str]:
 
 
 def main():
-    # word_data = json.loads(download(JASIMA).decode("UTF-8"))["data"]
-    mora_split("kekansan")
+    urr_dict = {}
+
+    data = get_data()["data"]
+    for word in data.keys():
+        reprs = get_sounds_to_reprs(word)
+        print(reprs)
+
+        for sound, repr in reprs.items():
+            if sound in urr_dict:
+                urr_dict[sound].extend(repr)
+            else:
+                urr_dict[sound] = repr
+    print(urr_dict)
 
 
 if __name__ == "__main__":
