@@ -1,4 +1,4 @@
-from tputils.process import syllable_split
+from tputils.tokenize import syllable_split
 
 
 def test_nanpa():

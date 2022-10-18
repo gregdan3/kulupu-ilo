@@ -1,8 +1,8 @@
-from tputils.staircase import staircase
-from tputils.writing import CONSONANTS, VOWELS, valid_syllables
+from tputils.toys import staircase
+from tputils.validate import CONSONANTS, VOWELS, valid_syllables
 
-print(valid_syllables())
-SYLLABLES = list(valid_syllables())
+print(valid_syllables(consecutive=False))
+SYLLABLES = list(valid_syllables(consecutive=False))
 CONSONANTS = list(CONSONANTS)
 VOWELS = list(VOWELS)
 

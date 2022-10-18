@@ -1,4 +1,4 @@
-from tputils.process import get_sounds_to_reprs
+from tputils.toys import get_sounds_to_reprs
 
 
 def test_nanpa():

@@ -9,6 +9,9 @@ dependencies = [
 requires-python = ">=3.8"
 license = { text = "GPL-3.0-or-later" }
 [project.optional-dependencies]
+nlp = [
+    "nltk>=3.7",
+]
 
 [tool.pdm]
 [tool.pdm.dev-dependencies]

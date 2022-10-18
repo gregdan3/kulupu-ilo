@@ -1,4 +1,6 @@
 .pdm.toml
 __pypackages__/
 __pycache__/
-data.json
+
+downloads/*
+!downloads/nimi_ku.txt

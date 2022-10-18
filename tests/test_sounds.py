@@ -1,4 +1,4 @@
-from tputils.writing import CONSONANTS, VOWELS, valid_moras, valid_syllables
+from tputils.validate import CONSONANTS, VOWELS, valid_moras, valid_syllables
 
 
 def test_moras():

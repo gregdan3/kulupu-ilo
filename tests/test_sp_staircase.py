@@ -1,1 +1,1 @@
-from tputils.staircase import repr_staircase as staircase
+from tputils.toys import repr_staircase as staircase
