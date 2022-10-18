@@ -1,4 +1,4 @@
-from tputils.validate import validate_word
+from kulupu_ilo.validate import validate_word
 
 
 def test_outside_alphabet():

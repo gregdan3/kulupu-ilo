@@ -2,7 +2,7 @@ from typing import List
 
 import nltk
 
-from tputils.validate import VOWELS
+from kulupu_ilo.validate import VOWELS
 
 Sent = str
 Word = str

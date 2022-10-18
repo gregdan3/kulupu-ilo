@@ -2,9 +2,9 @@
 import json
 from typing import Dict, List, Optional
 
-from tputils.tokenize import mora_split
-from tputils.validate import VOWELS, valid_syllables, validate_word
-from tputils.words import nimi_Linku
+from kulupu_ilo.tokenize import mora_split
+from kulupu_ilo.validate import VOWELS, valid_syllables, validate_word
+from kulupu_ilo.words import nimi_Linku
 
 
 def rm_str_prefix(str, prefix):

@@ -1,5 +1,5 @@
-from tputils.toys import staircase
-from tputils.validate import CONSONANTS, VOWELS, valid_syllables
+from kulupu_ilo.toys import staircase
+from kulupu_ilo.validate import CONSONANTS, VOWELS, valid_syllables
 
 print(valid_syllables(consecutive=False))
 SYLLABLES = list(valid_syllables(consecutive=False))

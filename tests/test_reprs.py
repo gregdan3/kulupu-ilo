@@ -1,4 +1,4 @@
-from tputils.toys import get_sounds_to_reprs
+from kulupu_ilo.toys import get_sounds_to_reprs
 
 
 def test_nanpa():

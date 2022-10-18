@@ -1,4 +1,4 @@
-from tputils.tokenize import syllable_split
+from kulupu_ilo.tokenize import syllable_split
 
 
 def test_nanpa():

@@ -1,4 +1,5 @@
-from tputils.validate import CONSONANTS, VOWELS, valid_moras, valid_syllables
+from kulupu_ilo.validate import (CONSONANTS, VOWELS, valid_moras,
+                                 valid_syllables)
 
 
 def test_moras():

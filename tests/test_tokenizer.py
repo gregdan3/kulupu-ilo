@@ -1,6 +1,6 @@
 import pytest
 
-from tputils.tokenize import tp_sent_tokenize, tp_word_tokenize
+from kulupu_ilo.tokenize import tp_sent_tokenize, tp_word_tokenize
 
 
 def test_document():

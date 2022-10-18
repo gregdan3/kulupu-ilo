@@ -1,4 +1,4 @@
-from tputils.tokenize import mora_split
+from kulupu_ilo.tokenize import mora_split
 
 
 def test_nanpa():
