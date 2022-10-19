@@ -14,7 +14,7 @@ deps:
 	pdm run python -c "import nltk; nltk.download('punkt')"
 
 test:
-	pdm run pytest --ignore ./__pypackages__
+	pdm run pytest -rP ./tests
 
 $(OUTDIR)/nimi_pu.txt:
 	curl -s https://tokipona.org/nimi_pu.txt > $@
